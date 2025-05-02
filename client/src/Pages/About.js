@@ -14,8 +14,8 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import CountUp from "react-countup";
-import aboutCard from "../Assests/ab-card.jpg";
-import banner from "../Assests/ab-5.jpg";
+import aboutCard from "../Assets/ab-card.jpg";
+import banner from "../Assets/ab-5.jpg";
 const About = () => {
   const year = new Date().getFullYear();
   return (

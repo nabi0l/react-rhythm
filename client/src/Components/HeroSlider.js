@@ -12,19 +12,19 @@ const HeroSlider = () => {
             id: 1,
             title: 'Welcome to TuneDownloader',
             description: 'Download your favorite songs with ease',
-            image: require('../Assests/hero-1.jpg',)  // Using require for proper image loading
+            image: require('../Assets/hero-1.jpg',)  // Using require for proper image loading
         },
         {
             id: 2,
             title: 'Download your favorite songs',
             description: 'Download your favorite songs with TuneDownloader',
-            image: require('../Assests/hero-2.jpg',)  
+            image: require('../Assets/hero-2.jpg',)  
         },
         {
             id: 3,
             title: 'Download your favorite songs',
             description: 'Download your favorite songs with TuneDownloader',
-            image: require('../Assests/hero-3.jpg',) 
+            image: require('../Assets/hero-3.jpg',) 
         }
     ];
 

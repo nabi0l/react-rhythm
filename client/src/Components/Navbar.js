@@ -1,5 +1,15 @@
-import { FaMusic, FaUser, FaShoppingCart, FaDownload, FaBars, FaTimes, FaChevronDown, FaChevronUp, FaSearch } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import {
+  FaMusic,
+  FaUser,
+  FaShoppingCart,
+  FaDownload,
+  FaBars,
+  FaTimes,
+  FaChevronDown,
+  FaChevronUp,
+  FaSearch,
+} from "react-icons/fa";
+import { NavLink, useMatch } from "react-router-dom";
 import { useState } from "react";
 import "../App.css";
 
@@ -7,9 +17,17 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
 
+  const isGenresActive = useMatch("/products/genres");
+  const isSongsActive = useMatch("/products/songs");
+  const isAlbumsActive = useMatch("/products/albums");
+  const isArtistsActive = useMatch("/products/artists");
+
+  const isProductsActive =
+    isGenresActive || isSongsActive || isAlbumsActive || isArtistsActive;
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    // Close products dropdown when closing mobile menu
+
     if (isMenuOpen) {
       setIsProductsOpen(false);
     }
@@ -23,13 +41,14 @@ const Navbar = () => {
     <div className=" fixed top-0 left-0 right-0 z-50  bg-white shadow-md w-full">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
-          {/* Logo on the left */}
+
           <div className="flex items-center space-x-2">
             <FaMusic className="text-2xl text-purple-600" />
-            <h1 className="text-2xl font-bold text-purple-600">TuneDownloader</h1>
+            <h1 className="text-2xl font-bold text-purple-600">
+              TuneDownloader
+            </h1>
           </div>
 
-          {/* Desktop Navigation - Center */}
           <nav className="hidden md:flex flex-1 justify-center">
             <ul className="flex items-center space-x-4 lg:space-x-6">
               <li>
@@ -56,22 +75,28 @@ const Navbar = () => {
                   About
                 </NavLink>
               </li>
-              
-              {/* Products Dropdown */}
+
               <li className="relative group">
-                <button 
-                  onClick={toggleProducts}
-                  className="flex items-center text-gray-600 hover:text-purple-600 transition"
-                >
-                  Products
-                  {isProductsOpen ? (
-                    <FaChevronUp className="ml-1 text-sm" />
-                  ) : (
-                    <FaChevronDown className="ml-1 text-sm" />
-                  )}
-                </button>
-                
-                {/* Dropdown Menu */}
+                <div className="flex items-center">
+                  <span
+                    className={`text-gray-600 hover:text-purple-600 transition ${
+                      isProductsActive ? "text-purple-600 font-medium" : ""
+                    }`}
+                  >
+                    Products
+                  </span>
+                  <button
+                    onClick={toggleProducts}
+                    className="ml-1 focus:outline-none"
+                  >
+                    {isProductsOpen ? (
+                      <FaChevronUp className="text-sm" />
+                    ) : (
+                      <FaChevronDown className="text-sm" />
+                    )}
+                  </button>
+                </div>
+
                 {isProductsOpen && (
                   <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
                     <NavLink
@@ -85,7 +110,7 @@ const Navbar = () => {
                     >
                       Genres
                     </NavLink>
-                    <NavLink
+                    {/* <NavLink
                       to="/products/songs"
                       onClick={() => setIsProductsOpen(false)}
                       className={({ isActive }) =>
@@ -95,7 +120,7 @@ const Navbar = () => {
                       }
                     >
                       Songs
-                    </NavLink>
+                    </NavLink> */}
                     <NavLink
                       to="/products/albums"
                       onClick={() => setIsProductsOpen(false)}
@@ -137,11 +162,14 @@ const Navbar = () => {
             </ul>
           </nav>
 
-          {/* Desktop Right-aligned items */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
-            <NavLink to='/search'
-            className={({isActive})=>
-            `text-gray-600 hover:text-purple-600 transition text-xl ${isActive ? 'text-purple-600':""}`}
+            <NavLink
+              to="/search"
+              className={({ isActive }) =>
+                `text-gray-600 hover:text-purple-600 transition text-xl ${
+                  isActive ? "text-purple-600" : ""
+                }`
+              }
             >
               <FaSearch />
             </NavLink>
@@ -187,7 +215,6 @@ const Navbar = () => {
             </NavLink>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
@@ -202,7 +229,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden pb-4">
             <nav>
@@ -233,10 +259,9 @@ const Navbar = () => {
                     About
                   </NavLink>
                 </li>
-                
-                {/* Mobile Products Dropdown */}
+
                 <li>
-                  <button 
+                  <button
                     onClick={toggleProducts}
                     className="flex items-center w-full py-2 text-gray-600 hover:text-purple-600"
                   >
@@ -247,9 +272,8 @@ const Navbar = () => {
                       <FaChevronDown className="ml-1 text-sm" />
                     )}
                   </button>
-                  
-                  {/* Mobile Dropdown Menu */}
-                  {isProductsOpen && (
+        
+                           {isProductsOpen && (
                     <div className="pl-4 mt-1 space-y-2">
                       <NavLink
                         to="/products/genres"

@@ -19,13 +19,13 @@ import {
 import "../App.css";
 import HeroSlider from "../Components/HeroSlider";
 
-import heroImage from "../Assests/hero-3.jpg";
+import heroImage from "../Assets/hero-3.jpg";
 // Import category images
-import popImage from "../Assests/pop.jpg";
-import contemporaryImage from "../Assests/contemporary.jpg";
-import rnbImage from "../Assests/r&b.jpg";
-import countryImage from "../Assests/country.jpg";
-import hiphopImage from "../Assests/hymns.jpg";
+import popImage from "../Assets/pop.jpg";
+import contemporaryImage from "../Assets/contemporary.jpg";
+import rnbImage from "../Assets/r&b.jpg";
+import countryImage from "../Assets/country.jpg";
+import hiphopImage from "../Assets/hymns.jpg";
 
 const Home = () => {
   const category = [
@@ -72,28 +72,28 @@ const Home = () => {
       artist: "Elevation Worship",
       genre: "Contemporary Worship",
       duration: "5:05",
-      image: require("../Assests/img/praise.jpeg"),
+      image: require("../Assets/img/praise.jpeg"),
     },
     {
       title: "Mighty Name of Jesus",
       artist: "The Belonging Co",
       genre: "Christian",
       duration: "8:00",
-      image: require("../Assests/img/mighty.jpg"),
+      image: require("../Assets/img/mighty.jpg"),
     },
     {
       title: "Jireh",
       artist: "Elevation worship",
       genre: "Contemporary Worship",
       duration: "9:30",
-      image: require("../Assests/img/jireh.jpg"),
+      image: require("../Assets/img/jireh.jpg"),
     },
     {
       title: "I know Who holds Tomorrow",
       artist: "Crowder",
       genre: "Country",
       duration: "4:30",
-      image: require("../Assests/img/crowder.jpg"),
+      image: require("../Assets/img/crowder.jpg"),
     },
   ];
 
@@ -119,28 +119,28 @@ const Home = () => {
   const featuredArtists = [
     {
       name: "Elevation Worship",
-      image: require("../Assests/logo/elevation-logo.png"),
+      image: require("../Assets/logo/elevation-logo.png"),
       description:
         "Elevation Worship is a Contemporary Worship band that leads worship services at Elevation Church in Charlotte, North Carolina. The band is known for its blend of modern worship songs with elements of traditional hymns and gospel music.",
       link: "/elevation-worship",
     },
     {
       name: "HillSong United",
-      image: require("../Assests/logo/hillsong-united.jpg"),
+      image: require("../Assets/logo/hillsong-united.jpg"),
       description:
         "Hillsong United is a Contemporary Worship band that leads worship services at Hillsong Church in Sydney, Australia. The band is known for its blend of modern worship songs with elements of traditional hymns and gospel music.",
       link: "/hillsong-united",
     },
     {
       name: "Bethel Music",
-      image: require("../Assests/logo/bethel-music.webp"),
+      image: require("../Assets/logo/bethel-music.webp"),
       description:
         "Bethel Music is a Contemporary Worship band that leads Worship services at Bethel Church in Redding California. The band is known for its blend of modern worship songs with elements of traditional hymns and gospel music. ",
       link: "/bethel-music",
     },
     {
       name: "Kingdom Sound",
-      image: require("../Assests/logo/kingdom_sound_logo.png"),
+      image: require("../Assets/logo/kingdom_sound_logo.png"),
       description:
         "Kingdom Sound Ministry is  a Christian organization that aims to reach the youth in Ethiopia and beyond with contemporary music and biblical insights. ",
       link: "/Kingdom-sound",
@@ -153,28 +153,28 @@ const Home = () => {
       artist: "Josiah Queen",
       genre: "Alternative Pop/rock",
       duration: " 3:34",
-      image: require("../Assests/song/Josiah.jpeg"),
+      image: require("../Assets/song/Josiah.jpeg"),
     },
     {
       title: "I know a name",
       artist: "Chris Brown",
       genre: "Contemporary",
       duration: "7:10",
-      image: require("../Assests/song/know.jpeg"),
+      image: require("../Assets/song/know.jpeg"),
     },
     {
       title: "The King is in the Room",
       artist: "Phil Wickham",
       genre: "Christian",
       duration: "4:03",
-      image: require("../Assests/song/phil.jpeg"),
+      image: require("../Assets/song/phil.jpeg"),
     },
     {
       title: "Hard fought Hallelujah",
       artist: "Jelly Roll",
       genre: "Pop/rock, Contemporary",
       duration: "5:32",
-      image: require("../Assests/song/jelly.jpeg"),
+      image: require("../Assets/song/jelly.jpeg"),
     },
   ];
 
